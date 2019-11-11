@@ -72,7 +72,7 @@
                 <ul class="filter-checkbox">
                     <li class="BA">
                         <a href="#" class="min-price">BA</a>
-                        <button  (click)="justAirlines(1)" class="filter-only" style="border:none;">just</button>
+                        <button  (click)="onlyAirlines(1)" class="filter-only" style="border:none;">only</button>
                         <span class="check-box-wrapper">
                           <input #inputEl1 id="1" checked="checked" type="checkbox" (click)="filterAirlines('BA',inputEl1.checked)">
                           <label class="filter-top-check-label">British Airways</label>
@@ -80,7 +80,7 @@
                     </li>
                     <li class="AA">
                         <a href="#" class="min-price">AA</a>
-                        <button  (click)="justAirlines(2)" class="filter-only" style="border:none;">just</button>
+                        <button  (click)="onlyAirlines(2)" class="filter-only" style="border:none;">only</button>
                         <span class="check-box-wrapper">
                         <input #inputEl2 id="2" checked="checked" type="checkbox" (click)="filterAirlines('AA',inputEl2.checked)">
                         <label class="filter-top-check-label">American Airlines</label>
@@ -88,7 +88,7 @@
                     </li>
                     <li class="TK">
                         <a href="#" class="min-price">TK</a>
-                        <button  (click)="justAirlines(3)" class="filter-only" style="border:none;">just</button>
+                        <button  (click)="onlyAirlines(3)" class="filter-only" style="border:none;">only</button>
                         <span class="check-box-wrapper">
                       <input #inputEl3 id="3"checked="checked" type="checkbox" (click)="filterAirlines('TK',inputEl3.checked)">
                       <label class="filter-top-check-label">Turkish Airlines</label>
@@ -96,7 +96,7 @@
                     </li>
                     <li class="AF">
                         <a href="#" class="min-price">AF</a>
-                        <button  (click)="justAirlines(4)" class="filter-only" style="border:none;">just</button>
+                        <button  (click)="onlyAirlines(4)" class="filter-only" style="border:none;">only</button>
                         <span class="check-box-wrapper">
                     <input #inputEl4 id="4" checked="checked" type="checkbox" (click)="filterAirlines('AF',inputEl4.checked)">
                     <label class="filter-top-check-label">Air France</label>
@@ -104,7 +104,7 @@
                     </li>
                     <li class="KK">
                         <a href="#" class="min-price">KK</a>
-                        <button  (click)="justAirlines(5)" class="filter-only" style="border:none;">just</button>
+                        <button  (click)="onlyAirlines(5)" class="filter-only" style="border:none;">only</button>
                         <span class="check-box-wrapper">
                     <input #inputEl5 id="5" checked="checked" type="checkbox" (click)="filterAirlines('KK',inputEl5.checked)">
                     <label class="filter-top-check-label">Atlasglobal</label>
@@ -112,7 +112,7 @@
                     </li>
                     <li class="DL">
                         <a href="#" class="min-price">DL</a>
-                        <button  (click)="justAirlines(6)" class="filter-only" style="border:none;">just</button>
+                        <button  (click)="onlyAirlines(6)" class="filter-only" style="border:none;">only</button>
                         <span class="check-box-wrapper">
                     <input #inputEl6 id="6" checked="checked" type="checkbox" (click)="filterAirlines('DL',inputEl6.checked)">
                     <label class="filter-top-check-label">Delta Air Lines</label>
@@ -120,7 +120,7 @@
                     </li>
                     <li class="UA">
                         <a href="#" class="min-price">UA</a>
-                        <button  (click)="justAirlines(7)" class="filter-only" style="border:none;">just</button>
+                        <button  (click)="onlyAirlines(7)" class="filter-only" style="border:none;">only</button>
                         <span class="check-box-wrapper">
                     <input #inputEl7 id="7" checked="checked" type="checkbox" (click)="filterAirlines('UA',inputEl7.checked)">
                     <label class="filter-top-check-label">United Airlines</label>
@@ -128,7 +128,7 @@
                     </li>
                     <li class="LH">
                         <a href="#" class="min-price">LH</a>
-                        <button  (click)="justAirlines(8)" class="filter-only" style="border:none;">just</button>
+                        <button  (click)="onlyAirlines(8)" class="filter-only" style="border:none;">only</button>
                         <span class="check-box-wrapper">
                     <input #inputEl8 id="8" checked="checked" type="checkbox" (click)="filterAirlines('LH',inputEl8.checked)">
                     <label class="filter-top-check-label">Lufthansa</label>
@@ -136,7 +136,7 @@
                     </li>
                     <li class="AC">
                         <a href="#" class="min-price">AC</a>
-                        <button  (click)="justAirlines(9)" class="filter-only" style="border:none;">just</button>
+                        <button  (click)="onlyAirlines(9)" class="filter-only" style="border:none;">only</button>
                         <span class="check-box-wrapper">
                     <input #inputEl9 id="9" checked="checked" type="checkbox" (click)="filterAirlines('AC',inputEl9.checked)">
                     <label class="filter-top-check-label">Air Canada</label>
@@ -144,7 +144,7 @@
                     </li>
                     <li class="KL">
                         <a href="#" class="min-price">KL</a>
-                        <button  (click)="justAirlines(10)" class="filter-only" style="border:none;">just</button>
+                        <button  (click)="onlyAirlines(10)" class="filter-only" style="border:none;">only</button>
                         <span class="check-box-wrapper">
                     <input #inputEl10 id="10" checked="checked" type="checkbox" (click)="filterAirlines('KL',inputEl10.checked)">
                     <label class="filter-top-check-label">KLM Royal Dutch Airlines</label>
@@ -152,7 +152,7 @@
                     </li>
                     <li class="LX">
                         <a href="#" class="min-price">LX</a>
-                        <button  (click)="justAirlines(11)" class="filter-only" style="border:none;">just</button>
+                        <button  (click)="onlyAirlines(11)" class="filter-only" style="border:none;">only</button>
                         <span class="check-box-wrapper">
                     <input #inputEl11 id="11" checked="checked" type="checkbox" (click)="filterAirlines('LX',inputEl11.checked)">
                     <label class="filter-top-check-label">Swiss International Air Lines</label>
@@ -160,7 +160,7 @@
                     </li>
                     <li class="OS">
                         <a href="#" class="min-price">OS</a>
-                        <button  (click)="justAirlines(12)" class="filter-only" style="border:none;">just</button>
+                        <button  (click)="onlyAirlines(12)" class="filter-only" style="border:none;">only</button>
                         <span class="check-box-wrapper">
                     <input #inputEl12 id="12" checked="checked" type="checkbox" (click)="filterAirlines('OS',inputEl12.checked)">
                     <label class="filter-top-check-label">Austrian Airlines</label>
@@ -168,7 +168,7 @@
                     </li>
                     <li class="IR">
                         <a href="#" class="min-price">IR</a>
-                        <button  (click)="justAirlines(13)" class="filter-only" style="border:none;">just</button>
+                        <button  (click)="onlyAirlines(13)" class="filter-only" style="border:none;">only</button>
                         <span class="check-box-wrapper">
                     <input #inputEl13 id="13" checked="checked" type="checkbox" (click)="filterAirlines('IR',inputEl13.checked)">
                     <label class="filter-top-check-label">Airlines to Iran</label>
@@ -176,7 +176,7 @@
                     </li>
                     <li class="SU">
                         <a href="#" class="min-price">SU</a>
-                        <button  (click)="justAirlines(14)" class="filter-only" style="border:none;">just</button>
+                        <button  (click)="onlyAirlines(14)" class="filter-only" style="border:none;">only</button>
                         <span class="check-box-wrapper">
                     <input #inputEl14 id="14" checked="checked" type="checkbox" (click)="filterAirlines('SU',inputEl14.checked)">
                     <label class="filter-top-check-label">Aeroflot Russian Airlines</label>
@@ -184,7 +184,7 @@
                     </li>
                     <li class="EY">
                         <a href="#" class="min-price">EY</a>
-                        <button  (click)="justAirlines(15)" class="filter-only" style="border:none;">just</button>
+                        <button  (click)="onlyAirlines(15)" class="filter-only" style="border:none;">only</button>
                         <span class="check-box-wrapper">
                     <input #inputEl15  id="15" checked="checked" type="checkbox" (click)="filterAirlines('EY',inputEl15.checked)">
                     <label class="filter-top-check-label">Etihad Airways</label>
@@ -192,7 +192,7 @@
                     </li>
                     <li class="J2">
                         <a href="#" class="min-price">J2</a>
-                        <button  (click)="justAirlines(16)" class="filter-only" style="border:none;">just</button>
+                        <button  (click)="onlyAirlines(16)" class="filter-only" style="border:none;">only</button>
                         <span class="check-box-wrapper">
                     <input #inputEl16 id="16" checked="checked" type="checkbox" (click)="filterAirlines('J2',inputEl16.checked)">
                     <label class="filter-top-check-label">Azerbaijan Airlines</label>
@@ -200,7 +200,7 @@
                     </li>
                     <li class="PS">
                         <a href="#" class="min-price">PS</a>
-                        <button  (click)="justAirlines(17)" class="filter-only" style="border:none;">just</button>
+                        <button  (click)="onlyAirlines(17)" class="filter-only" style="border:none;">only</button>
                         <span class="check-box-wrapper">
                     <input #inputEl17 id="17" checked="checked" type="checkbox" (click)="filterAirlines('PS',inputEl17.checked)">
                     <label class="filter-top-check-label">Ukraine International Airlines</label>
@@ -208,7 +208,7 @@
                     </li>
                     <li class="SV">
                         <a href="#" class="min-price">SV</a>
-                        <button  (click)="justAirlines(18)" class="filter-only" style="border:none;">just</button>
+                        <button  (click)="onlyAirlines(18)" class="filter-only" style="border:none;">only</button>
                         <span class="check-box-wrapper">
                     <input #inputEl18 id="18" checked="checked" type="checkbox" (click)="filterAirlines('SV',inputEl18.checked)">
                     <label class="filter-top-check-label">Saudi Arabian Airlines</label>
@@ -216,7 +216,7 @@
                     </li>
                     <li class="QR">
                         <a href="#" class="min-price">QR</a>
-                        <button  (click)="justAirlines(19)" class="filter-only" style="border:none;">just</button>
+                        <button  (click)="onlyAirlines(19)" class="filter-only" style="border:none;">only</button>
                         <span class="check-box-wrapper">
                     <input #inputEl19 id="19" checked="checked" type="checkbox" (click)="filterAirlines('QR',inputEl19.checked)">
                     <label class="filter-top-check-label">Qatar Airways</label>
@@ -224,7 +224,7 @@
                     </li>
                     <li class="MS">
                         <a href="#" class="min-price">MS</a>
-                        <button  (click)="justAirlines(20)" class="filter-only" style="border:none;">just</button>
+                        <button  (click)="onlyAirlines(20)" class="filter-only" style="border:none;">only</button>
                         <span class="check-box-wrapper">
                     <input #inputEl20 id="20" checked="checked" type="checkbox" (click)="filterAirlines('MS',inputEl20.checked)">
                     <label class="filter-top-check-label">Egypt Air</label>
@@ -232,7 +232,7 @@
                     </li>
                     <li class="EK">
                         <a href="#" class="min-price">EK</a>
-                        <button  (click)="justAirlines(21)" class="filter-only" style="border:none;">just</button>
+                        <button  (click)="onlyAirlines(21)" class="filter-only" style="border:none;">only</button>
                         <span class="check-box-wrapper">
                     <input #inputEl21 id="21" checked="checked" type="checkbox" (click)="filterAirlines('EK',inputEl21.checked)">
                     <label class="filter-top-check-label">Emirates Airlines</label>
@@ -240,7 +240,7 @@
                     </li>
                     <li class="LO">
                         <a href="#" class="min-price">LO</a>
-                        <button  (click)="justAirlines(22)" class="filter-only" style="border:none;">just</button>
+                        <button  (click)="onlyAirlines(22)" class="filter-only" style="border:none;">only</button>
                         <span class="check-box-wrapper">
                     <input #inputEl22 id="22" checked="checked" type="checkbox" (click)="filterAirlines('LO',inputEl22.checked)">
                     <label class="filter-top-check-label">Polish Airlines</label>
