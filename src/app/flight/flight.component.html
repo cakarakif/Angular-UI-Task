@@ -1,0 +1,365 @@
+<router-outlet></router-outlet>
+<div *ngIf="router.url ==='/flights'" class="div-search-list" style="position: relative; width: 70%; margin:auto; left: 15%;">
+    <div  class="div-search-nav hidden-sm hidden-xs">
+
+        <div class="nav-item sf-main">
+            <div class="title">
+                <img src="https://res.cloudinary.com/turna/image/upload/q_auto,f_auto/Images/Icons/icon-filter.png">
+                <span>Filter</span>
+            </div>
+            <ul id="filter-top" class="filter-stops filter-checkbox">
+                <li id="all-list">
+                    <a href="#" class="min-price">List All Flights</a>
+                    <span class="check-box-wrapper">
+                      <input type="checkbox" [checked]="currentlyChecked === check_box_type.all" (click)="selectCheckBoxSort(check_box_type.all)">
+                      <label class="filter-top-check-label">All</label>
+                  </span>
+                </li>
+                <li id="direct-flight">
+                    <a href="#" class="min-price">Low To High</a>
+                    <span class="check-box-wrapper">
+                      <input type="checkbox" [checked]="currentlyChecked === check_box_type.price" (click)="selectCheckBoxSort(check_box_type.price)">
+                      <label class="filter-top-check-label">Price</label>
+                  </span>
+                </li>
+                <li id="one-stop">
+                    <a href="#" class="min-price">Shortest To Longest</a>
+                    <span class="check-box-wrapper">
+                      <input type="checkbox" name="one-stop" (click)="sortDuration()">
+                      <input type="checkbox" [checked]="currentlyChecked === check_box_type.duration" (click)="selectCheckBoxSort(check_box_type.duration)">
+                      <label class="filter-top-check-label">Total Duration</label>
+                  </span>
+                </li>
+
+            </ul>
+        </div>
+        <div class="nav-item sf-hours">
+            <div class="title" data-toggle="collapse" data-target=".flight-time">
+                <img src="https://res.cloudinary.com/turna/image/upload/q_auto,f_auto/Images/Icons/icon-clock.png">
+                <span>Hours</span>
+                <img src="https://res.cloudinary.com/turna/image/upload/q_auto,f_auto/Images/Icons/icon-expand-select.png" alt="">
+            </div>
+            <div class="flight-time collapse initial-show in">
+                <ul id="filter-time-takeoff">
+                    <li class="departure-times">
+                        <span class="filter-sub-header">Departure :</span>
+                        <span class="font-size-15 departure">İstanbul (IST...</span> <br>
+                        <span class="begin-time">00:00</span> - <span class="end-time">23:59</span>
+                        <ng5-slider [(value)]="minSliderDep" [(highValue)]="maxSliderDep" [options]="optionsSliderDep"></ng5-slider>                      
+                    </li>
+
+                </ul>
+                <ul id="filter-time-landing" class="collapse in display-none">
+                    <li class="departure-times">
+                        <span class="filter-sub-header">Arrival :</span>
+                        <span class="font-size-15 return">John F Kenned...</span><br>
+                        <span class="begin-time">00:00</span> - <span class="end-time">23:59</span>
+                        <ng5-slider [(value)]="minSliderArr" [(highValue)]="maxSliderArr" [options]="optionsSliderArr"></ng5-slider>   
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="nav-item sf-airlines">
+            <div class="title" data-toggle="collapse" data-target="#filter-airlines">
+                <img src="https://res.cloudinary.com/turna/image/upload/q_auto,f_auto/Images/Icons/icon-airlines.png">
+                <span>Airways</span>
+                <img src="https://res.cloudinary.com/turna/image/upload/q_auto,f_auto/Images/Icons/icon-expand-select.png" alt="">
+                <!--<a class="filter-section-all" style="display: inline;">All</a>-->
+            </div>
+            <div id="filter-airlines" class="collapse initial-show in">
+                <ul class="filter-checkbox">
+                    <li class="BA">
+                        <a href="#" class="min-price">BA</a>
+                        <button  (click)="justAirlines(1)" class="filter-only" style="border:none;">just</button>
+                        <span class="check-box-wrapper">
+                          <input #inputEl1 id="1" checked="checked" type="checkbox" (click)="filterAirlines('BA',inputEl1.checked)">
+                          <label class="filter-top-check-label">British Airways</label>
+                      </span>
+                    </li>
+                    <li class="AA">
+                        <a href="#" class="min-price">AA</a>
+                        <button  (click)="justAirlines(2)" class="filter-only" style="border:none;">just</button>
+                        <span class="check-box-wrapper">
+                        <input #inputEl2 id="2" checked="checked" type="checkbox" (click)="filterAirlines('AA',inputEl2.checked)">
+                        <label class="filter-top-check-label">American Airlines</label>
+                    </span>
+                    </li>
+                    <li class="TK">
+                        <a href="#" class="min-price">TK</a>
+                        <button  (click)="justAirlines(3)" class="filter-only" style="border:none;">just</button>
+                        <span class="check-box-wrapper">
+                      <input #inputEl3 id="3"checked="checked" type="checkbox" (click)="filterAirlines('TK',inputEl3.checked)">
+                      <label class="filter-top-check-label">Turkish Airlines</label>
+                     </span>
+                    </li>
+                    <li class="AF">
+                        <a href="#" class="min-price">AF</a>
+                        <button  (click)="justAirlines(4)" class="filter-only" style="border:none;">just</button>
+                        <span class="check-box-wrapper">
+                    <input #inputEl4 id="4" checked="checked" type="checkbox" (click)="filterAirlines('AF',inputEl4.checked)">
+                    <label class="filter-top-check-label">Air France</label>
+                    </span>
+                    </li>
+                    <li class="KK">
+                        <a href="#" class="min-price">KK</a>
+                        <button  (click)="justAirlines(5)" class="filter-only" style="border:none;">just</button>
+                        <span class="check-box-wrapper">
+                    <input #inputEl5 id="5" checked="checked" type="checkbox" (click)="filterAirlines('KK',inputEl5.checked)">
+                    <label class="filter-top-check-label">Atlasglobal</label>
+                    </span>
+                    </li>
+                    <li class="DL">
+                        <a href="#" class="min-price">DL</a>
+                        <button  (click)="justAirlines(6)" class="filter-only" style="border:none;">just</button>
+                        <span class="check-box-wrapper">
+                    <input #inputEl6 id="6" checked="checked" type="checkbox" (click)="filterAirlines('DL',inputEl6.checked)">
+                    <label class="filter-top-check-label">Delta Air Lines</label>
+                    </span>
+                    </li>
+                    <li class="UA">
+                        <a href="#" class="min-price">UA</a>
+                        <button  (click)="justAirlines(7)" class="filter-only" style="border:none;">just</button>
+                        <span class="check-box-wrapper">
+                    <input #inputEl7 id="7" checked="checked" type="checkbox" (click)="filterAirlines('UA',inputEl7.checked)">
+                    <label class="filter-top-check-label">United Airlines</label>
+                    </span>
+                    </li>
+                    <li class="LH">
+                        <a href="#" class="min-price">LH</a>
+                        <button  (click)="justAirlines(8)" class="filter-only" style="border:none;">just</button>
+                        <span class="check-box-wrapper">
+                    <input #inputEl8 id="8" checked="checked" type="checkbox" (click)="filterAirlines('LH',inputEl8.checked)">
+                    <label class="filter-top-check-label">Lufthansa</label>
+                    </span>
+                    </li>
+                    <li class="AC">
+                        <a href="#" class="min-price">AC</a>
+                        <button  (click)="justAirlines(9)" class="filter-only" style="border:none;">just</button>
+                        <span class="check-box-wrapper">
+                    <input #inputEl9 id="9" checked="checked" type="checkbox" (click)="filterAirlines('AC',inputEl9.checked)">
+                    <label class="filter-top-check-label">Air Canada</label>
+                    </span>
+                    </li>
+                    <li class="KL">
+                        <a href="#" class="min-price">KL</a>
+                        <button  (click)="justAirlines(10)" class="filter-only" style="border:none;">just</button>
+                        <span class="check-box-wrapper">
+                    <input #inputEl10 id="10" checked="checked" type="checkbox" (click)="filterAirlines('KL',inputEl10.checked)">
+                    <label class="filter-top-check-label">KLM Royal Dutch Airlines</label>
+                    </span>
+                    </li>
+                    <li class="LX">
+                        <a href="#" class="min-price">LX</a>
+                        <button  (click)="justAirlines(11)" class="filter-only" style="border:none;">just</button>
+                        <span class="check-box-wrapper">
+                    <input #inputEl11 id="11" checked="checked" type="checkbox" (click)="filterAirlines('LX',inputEl11.checked)">
+                    <label class="filter-top-check-label">Swiss International Air Lines</label>
+                    </span>
+                    </li>
+                    <li class="OS">
+                        <a href="#" class="min-price">OS</a>
+                        <button  (click)="justAirlines(12)" class="filter-only" style="border:none;">just</button>
+                        <span class="check-box-wrapper">
+                    <input #inputEl12 id="12" checked="checked" type="checkbox" (click)="filterAirlines('OS',inputEl12.checked)">
+                    <label class="filter-top-check-label">Austrian Airlines</label>
+                    </span>
+                    </li>
+                    <li class="IR">
+                        <a href="#" class="min-price">IR</a>
+                        <button  (click)="justAirlines(13)" class="filter-only" style="border:none;">just</button>
+                        <span class="check-box-wrapper">
+                    <input #inputEl13 id="13" checked="checked" type="checkbox" (click)="filterAirlines('IR',inputEl13.checked)">
+                    <label class="filter-top-check-label">Airlines to Iran</label>
+                    </span>
+                    </li>
+                    <li class="SU">
+                        <a href="#" class="min-price">SU</a>
+                        <button  (click)="justAirlines(14)" class="filter-only" style="border:none;">just</button>
+                        <span class="check-box-wrapper">
+                    <input #inputEl14 id="14" checked="checked" type="checkbox" (click)="filterAirlines('SU',inputEl14.checked)">
+                    <label class="filter-top-check-label">Aeroflot Russian Airlines</label>
+                    </span>
+                    </li>
+                    <li class="EY">
+                        <a href="#" class="min-price">EY</a>
+                        <button  (click)="justAirlines(15)" class="filter-only" style="border:none;">just</button>
+                        <span class="check-box-wrapper">
+                    <input #inputEl15  id="15" checked="checked" type="checkbox" (click)="filterAirlines('EY',inputEl15.checked)">
+                    <label class="filter-top-check-label">Etihad Airways</label>
+                    </span>
+                    </li>
+                    <li class="J2">
+                        <a href="#" class="min-price">J2</a>
+                        <button  (click)="justAirlines(16)" class="filter-only" style="border:none;">just</button>
+                        <span class="check-box-wrapper">
+                    <input #inputEl16 id="16" checked="checked" type="checkbox" (click)="filterAirlines('J2',inputEl16.checked)">
+                    <label class="filter-top-check-label">Azerbaijan Airlines</label>
+                    </span>
+                    </li>
+                    <li class="PS">
+                        <a href="#" class="min-price">PS</a>
+                        <button  (click)="justAirlines(17)" class="filter-only" style="border:none;">just</button>
+                        <span class="check-box-wrapper">
+                    <input #inputEl17 id="17" checked="checked" type="checkbox" (click)="filterAirlines('PS',inputEl17.checked)">
+                    <label class="filter-top-check-label">Ukraine International Airlines</label>
+                    </span>
+                    </li>
+                    <li class="SV">
+                        <a href="#" class="min-price">SV</a>
+                        <button  (click)="justAirlines(18)" class="filter-only" style="border:none;">just</button>
+                        <span class="check-box-wrapper">
+                    <input #inputEl18 id="18" checked="checked" type="checkbox" (click)="filterAirlines('SV',inputEl18.checked)">
+                    <label class="filter-top-check-label">Saudi Arabian Airlines</label>
+                    </span>
+                    </li>
+                    <li class="QR">
+                        <a href="#" class="min-price">QR</a>
+                        <button  (click)="justAirlines(19)" class="filter-only" style="border:none;">just</button>
+                        <span class="check-box-wrapper">
+                    <input #inputEl19 id="19" checked="checked" type="checkbox" (click)="filterAirlines('QR',inputEl19.checked)">
+                    <label class="filter-top-check-label">Qatar Airways</label>
+                    </span>
+                    </li>
+                    <li class="MS">
+                        <a href="#" class="min-price">MS</a>
+                        <button  (click)="justAirlines(20)" class="filter-only" style="border:none;">just</button>
+                        <span class="check-box-wrapper">
+                    <input #inputEl20 id="20" checked="checked" type="checkbox" (click)="filterAirlines('MS',inputEl20.checked)">
+                    <label class="filter-top-check-label">Egypt Air</label>
+                    </span>
+                    </li>
+                    <li class="EK">
+                        <a href="#" class="min-price">EK</a>
+                        <button  (click)="justAirlines(21)" class="filter-only" style="border:none;">just</button>
+                        <span class="check-box-wrapper">
+                    <input #inputEl21 id="21" checked="checked" type="checkbox" (click)="filterAirlines('EK',inputEl21.checked)">
+                    <label class="filter-top-check-label">Emirates Airlines</label>
+                    </span>
+                    </li>
+                    <li class="LO">
+                        <a href="#" class="min-price">LO</a>
+                        <button  (click)="justAirlines(22)" class="filter-only" style="border:none;">just</button>
+                        <span class="check-box-wrapper">
+                    <input #inputEl22 id="22" checked="checked" type="checkbox" (click)="filterAirlines('LO',inputEl22.checked)">
+                    <label class="filter-top-check-label">Polish Airlines</label>
+                    </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="div-search-list-items">
+        <div class="sorting-title title">
+
+            <div class="clearfix"></div>
+        </div>
+        <div class="caption-top-dark item-header fl">
+            <a class="caption-top-dark-a font-size-14 text-left before-date">« Before</a>
+            <div class="margin-left-20 margin-right-20">
+                <span class="ow-route-info">FLIGHTS</span>
+                <br>
+                <p></p>
+            </div>
+            <a class="caption-top-dark-a font-size-14 text-right to-date">After »</a>
+        </div>
+        <div class="flights-wrapper">
+            <ul *ngFor="let flights of flightList; let i = index" style="list-style-type:none">
+                <li>
+                    <div class='flight-card'>
+                        <div class='flight-card--header'>
+                            <div class='flight-card--header-logo'>
+                                <img src='https://book.jetblue.com/assets/header/img/jetblue-white-reg.png'>
+                            </div>
+                            <div class='flight-card--header-details'>
+                                <div class='details-passenger'>
+                                    <span class='detail--title'>
+                                Price
+                              </span>
+                                    <span class='detail--text'>
+                                {{ flights.price }} $
+                              </span>
+                                </div>
+                                <div class='details-depart'>
+                                    <span class='detail--title'>
+                                Departs
+                              </span>
+                                    <span class='detail--text'>
+                                {{ flights.departureDate }}
+                              </span>
+                                </div>
+                                <div class='details-arrive'>
+                                    <span class='detail--title'>
+                                Arrives
+                              </span>
+                                    <span class='detail--text'>
+                                 {{ flights.arrivalDate }}
+                              </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='flight-card--details'>
+                            <div class='bc-from'>
+                                <span class='detail-code'>
+                              {{ flights.departureCity }}
+                            </span>
+                                <span class='detail-city'>
+                              Istanbul, Turkey
+                            </span>
+                            </div>
+                            <div class='bc-plane'>
+                                <img src='https://cdn.onlinewebfonts.com/svg/img_537856.svg'>
+                                <button (click)="setSelectedItem(i)" routerLink="flight-detail" routerLinkActive="active" >seç</button>
+                            </div>
+                            <div class='bc-to'>
+                                <span class='detail-code'>
+                              {{ flights.arrivalCity }}
+                            </span>
+                                <span class='detail-city'>
+                              New York, USA
+                            </span>
+                            </div>
+                            <div class='flight-card-details--text'>
+                                <div class='text-left'>
+                                    <span class='text-hline'>
+                                Operator
+                              </span>
+                                    <span class='text-actual'>
+                                {{ flights.marketingAirlines }}
+                              </span>
+                                </div>
+                                <div class='text-middle'>
+                                    <span class='text-hline'>
+                                Flight
+                              </span>
+                                    <span class='text-actual'>
+                                {{ flights.flightNumber }}
+                              </span>
+                                </div>
+                                <div class='text-right'>
+                                    <span class='text-hline'>
+                                Class
+                              </span>
+                                    <span class='text-actual mint'>
+                                {{ flights.classM }}
+                              </span>
+                                </div>
+                            </div>
+                            <div class='flight-card-details--admin'>
+                                <div class='admin-left'>
+                                    Connection: {{ flights.airportNameConnect }} -{{ flights.connectionCount }}- Layover Time: {{ flights.layoverTime }}
+                                </div>
+                                <div class='admin-right'>
+                                    Total Time: {{ flights.totalHour }} Return Time: {{ flights.returnHour }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
