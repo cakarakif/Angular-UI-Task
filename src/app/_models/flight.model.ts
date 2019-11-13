@@ -20,7 +20,6 @@ export class flight {
     hourDep:string;
     hourArr:string;
     hourTotal:string;
-    hourReturn:string;
 
     constructor(departureCity: string,arrivalCity: string,
                 departureDate: Date,arrivalDate: 
@@ -50,7 +49,6 @@ export class flight {
         this.hourDep=""+(this.departureDate).toLocaleString().substr(11,5);
         this.hourArr=""+(this.arrivalDate).toLocaleString().substr(11,5);
         this.hourTotal=""+Math.floor(this.totalHour / 60);
-        this.hourReturn=""+Math.floor(this.returnHour / 60);
     }
 
 }
