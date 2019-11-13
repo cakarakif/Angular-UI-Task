@@ -32,14 +32,14 @@ body, html {
 
 .div-reservation-content {
     margin-top: 21px;
-    border: 4px solid #74aefa;
+    border: 4px solid #599df7;
     border-radius: 4px 4px 0 0;
     padding-bottom: 4px;
     background-color: #fff
 }
 
 .div-reservation-content .caption {
-    background-color: #74aefa;
+    background-color: #599df7;
     font-size: 17px;
     color: #565656;
     padding: 5px 10px 9px
@@ -303,7 +303,8 @@ body, html {
     z-index: 4;
     height: 1px;
     position: relative;
-    margin-bottom: 12px
+    margin-bottom: 12px;
+    margin-top: 25px;
 }
 
 .margin-top-20 {
@@ -329,15 +330,20 @@ body, html {
 }
 
 .make-reservation {
-    background-color: #0e6dc7;
-    border: 1px solid #0e6dc7;
-    border-radius: 2px;
-    padding: 10px
+    background-color: #0275d8;
+    border: 1px solid #0275d8;
+    color: #fff;
+    padding: 10px;
+    outline: 0;
+    font-size: 16px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px
 }
 
 .btn-payment {
-    background-color: #fa0303;
-    border: 1px solid #fa0303;
+    background-color: #d9534f;
+    border: 1px solid #d9534f;
     color: #fff;
     padding: 10px;
     outline: 0;
