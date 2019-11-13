@@ -16,9 +16,10 @@ export class flight {
     returnHour: number;
     price: number;
 
-    //generated to show hour
+    //generated to show hours
     hourDep:string;
     hourArr:string;
+    hourTotal:string;
 
     constructor(departureCity: string,arrivalCity: string,
                 departureDate: Date,arrivalDate: 
@@ -45,8 +46,9 @@ export class flight {
         this.returnHour=returnHour,
         this.price=price;
 
-        this.hourDep=""+new Date(this.departureDate).getUTCHours()+":"+new Date(this.departureDate).getUTCMinutes();
-        this.hourArr=""+new Date(this.arrivalDate).getUTCHours()+":"+new Date(this.arrivalDate).getUTCMinutes();
+        this.hourDep=""+(this.departureDate).toLocaleString().substr(11,5);
+        this.hourArr=""+(this.arrivalDate).toLocaleString().substr(11,5);
+        this.hourTotal=""+Math.floor(this.totalHour / 60);
     }
 
 }

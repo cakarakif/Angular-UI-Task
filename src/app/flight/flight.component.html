@@ -316,24 +316,26 @@
                                                     <span class="point" style="--data-left:65%"></span>
                                                 </div>
                                                 <div class="airline-image">
-                                                    <div class="df-text">{{ flights.totalHour }} Hours</div>
+                                                    <div class="df-text">{{ flights.hourTotal }} Hours</div>
                                                     <span class="img-wrapper">
                                                         <svg class="anime-airplane">
                                                             <use xlink:href="#airplane"></use>
                                                         </svg>
                                                         <span class="top-label has-stops">{{ flights.connectionCount }} Stops <span
-                                                                class="stops">{{ flights.airportNameConnect }}</span></span>
+                                                                class="stops">{{ flights.airportNameConnect }}</span> Flight <span
+                                                                class="stops">{{ flights.flightNumber }}</span> Return <span
+                                                                class="stops">{{ flights.returnHour }}</span></span>
                                                     </span>
                                                 </div>
 
                                                 <div class="port-seg">
                                                     <div class="flight-seg origin">
-                                                        <div class="time">{{ flights.departureDate }}</div>
+                                                        <div class="time" >{{ flights.hourDep }}</div>
                                                         <div class="port">{{ flights.departureCity }}</div>
                                                         <div class="name">Istanbul</div>
                                                     </div>
                                                     <div class="flight-seg destination">
-                                                        <div class="time">{{ flights.arrivalDate }}</div>
+                                                        <div class="time">{{ flights.hourArr }}</div>
                                                         <div class="port">{{ flights.arrivalCity }}</div>
                                                         <div class="name">New York</div>
                                                     </div>
