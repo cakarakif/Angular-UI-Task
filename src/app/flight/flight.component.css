@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:100);
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400);
+
 .slider {
     display: inline-block;
     vertical-align: middle;
@@ -1346,209 +1349,488 @@ Flight Cards Part
 
 */
 
-img {
-    max-width: 20%;
+
+ 
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  font-size:1.2em;
+    height: 100vh;
+  margin: 0;  
+  background: radial-gradient(ellipse farthest-corner at center top, #ECECEC, #999);
+  color: #363c44;
+  font-size: 14px;
+  
+}
+.section{
+  max-width:95%;
+  margin:25px auto;
 }
 
-.flight-card {
-    width: 97%;
-    height: 200px;
-    border-radius: 35px;
-    margin: 10px auto;
-    overflow: hidden;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            /* new flight plan */
+.tp-flight-plan {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+    color: #363c44;
+    font-size: 14px;
+}
+.tp-flight-plan .crop {
+    position: relative;
+    border: 1px solid #e2e2e2;
+    border-radius: 3px;
+    background-color: #fff;
+    cursor: pointer;
+    margin-bottom: 10px;
 }
 
-.flight-card--header {
-    width: 100%;
-    height: 85px;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#264b76+0,002c5f+100 */
-    background: linear-gradient(to bottom, #264b76 0%, #002c5f 100%);
-    padding: 5px 55px;
-    border-bottom: 7px solid #6DBE47;
+    .tp-flight-plan .crop .itin-det-btn {
+        -ms-transition: all .25s ease 0s;
+        -o-transition: all .25s ease 0s;
+        -moz-transition: all .25s ease 0s;
+        -webkit-transition: all .25s ease 0s;
+        transition: all .25s ease 0s;
+    }
+
+    .tp-flight-plan .crop .itin-det-btn {
+        text-decoration: none;
+        outline: none;
+        position: absolute;
+        right: -13px;
+        top: 35px;
+        font-size: 14px;
+        background-color: #FF5722;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        line-height: normal;
+    }
+
+        .tp-flight-plan .crop .itin-det-btn .fa {
+            display: none;
+        }
+
+    .tp-flight-plan .crop .context.collapsed i.fa-chevron-down {
+        display: block;
+    }
+
+.tp-flight-plan .crop .context:not(.collapsed) i.fa-chevron-up {
+    display: block;
+}
+
+.tp-flight-plan .context {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: stretch;
+    padding: 10px;
+    /* position: relative; */
+    background: #f5f5f5;
+}
+
+.tp-flight-plan .crop .item {
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.tp-flight-plan .crop .trip-type {
+    position: absolute;
+    left: -5px;
+    top: -19px;
+    line-height: normal;
+    background-color: #f5f5f5;
+    border-radius: 3px;
+    padding: 5px 10px 0;
+    color: #FF9800;
+    font-size: 11px;
+    width: 85px;
+    text-align: center;
+}
+
+    .tp-flight-plan .crop .trip-type.return {
+        color: #ec397b;
+        right: 0px;
+        left: unset;
+    }
+
+.tp-flight-plan .item.it-1 {
+    flex-grow: 5;
+    display: flex;
     position: relative;
 }
 
-.flight-card--header:before {
-    content: '';
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    background: #fff;
-    border-radius: 50px;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%) translateX(-50%);
+    .tp-flight-plan .item.it-1:before {
+        content: "";
+        position: absolute;
+        width: calc(100% - 10px);
+        height: 2px;
+        /*background-color: #878787;*/
+        border-top: dashed 1px #9E9E9E;
+        top: 50%;
+        left: 15px;
+        margin-top: -1px;
+    }
+
+.tp-flight-plan .it-1 .port-seg {
+    display: flex;
+    flex: 3;
+    position: relative;
 }
 
-.flight-card--header:after {
-    content: '';
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    background: #fff;
-    border-radius: 50px;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%) translateX(50%);
+    .tp-flight-plan .it-1 .port-seg .flight-seg {
+        flex: 1;
+        padding-bottom: 5px;
+    }
+
+.tp-flight-plan .it-1 .flight-seg.origin {
+    padding-left: 5px;
 }
 
-.flight-card--header-logo {
-    width: 122px;
+.tp-flight-plan .it-1 .flight-seg .time {
+    font-size: 20px;
+    color: #232b38;
+    font-weight: 700;
 }
 
-.flight-card--header-details {
-    width: 100%;
-    height: auto;
-    border-top: 3px solid rgba(255, 255, 255, 0.3);
-    color: #fff;
+.tp-flight-plan .it-1 .flight-seg .port {
+    display: inline-block;
+    background-color: #f5f5f5;
+    font-size: 16px;
+    color: #878787;
+    line-height: 3.;
 }
 
-.details-passenger {
-    width: 50%;
-    float: left;
+.tp-flight-plan .it-1 .flight-seg .name {
+    font-size: 12px;
+    color: #878787;
+    line-height: 1.2;
 }
 
-.details-depart,
-.details-arrive {
-    width: 25%;
-    float: left;
-}
-
-.detail--title {
-    opacity: 0.5;
-    display: block;
-    margin: 1px 0 0 0;
-}
-
-.detail--text {
-    display: block;
-    margin: 1px 0 0 0;
-}
-
-.flight-card--details {
-    padding: 10px 25px;
-}
-
-.detail-code {
-    color: #002C5F;
-    font-size: 10px;
-    display: block;
-    font-weight: 100;
-}
-
-.detail-city {
-    color: #002C5F;
-}
-
-.bc-from {
-    width: 30%;
-    float: left;
-}
-
-.bc-to {
-    width: 35%;
-    float: right;
+.tp-flight-plan .it-1 .flight-seg.destination {
     text-align: right;
+    padding-right: 5px;
 }
 
-.bc-plane {
-    width: 30%;
-    float: left;
+.tp-flight-plan .flight-seg.destination .port {
+    padding: 0 0 0 5px;
+}
+
+.tp-flight-plan .it-1 .airline-image {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    padding: 0 20px;
+    height: 21px;
+}
+
+.tp-flight-plan .it-1 .img-wrapper {
+    flex: 1;
     text-align: center;
     position: relative;
 }
 
-.bc-plane img {
-    width: 10%;
-    margin: 1px auto 0 auto;
+.tp-flight-plan .it-1 .top-label {
+    color: #47cf73;
+    font-size: 11px;
 }
 
-.bc-plane:before {
-    content: '';
-    width: 135px;
-    height: 2px;
-    background: #efefef;
+.tp-flight-plan .it-1 .df-text {
     position: absolute;
-    top: 15px;
-    left: -50px;
+    top: -24px;
+    left: 50%;
+    transform: translate(-50%,-100%);
+    font-size: 11px;
+    color: #A2A9B3;
+    text-align: center;
 }
 
-.bc-plane:after {
-    content: '';
-    width: 135px;
-    height: 2px;
-    background: #efefef;
+.tp-flight-plan .it-1 .top-label.has-stops {
+    color: Red;
+}
+
+.tp-flight-plan .it-1 .top-label .stops {
+    color: gray;
+}
+
+.tp-flight-plan .it-1 .route-dot span {
     position: absolute;
-    top: 15px;
-    right: -50px;
+    background-color: #607d8ba3;
+    /* background-color: #ff0000a3; */
+    top: calc(50% - 4px);
+    left: var(--data-left);
+    border-radius: 10px;
+    padding: 4px;
 }
 
-.flight-card-details--text {
-    width: 100%;
-    padding: 8px 0 0 0;
-    clear: both;
-    overflow: auto;
+.tp-flight-plan .it-2 .al-name {
+    display: block;
 }
 
-.text-left {
-    width: 33%;
-    float: left;
+.tp-flight-plan .item.it-2 {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #ccc;
+    flex-direction: column;
+    flex: 2 2 100px;
 }
 
-.text-middle {
-    width: 33%;
-    float: left;
-    padding: 0 0 0 10%;
+    .tp-flight-plan .item.it-2 .dr-row {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .tp-flight-plan .item.it-2 .airline-logo {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .tp-flight-plan .item.it-2 .take-tim {
+        font-size: 12px;
+        color: gray;
+        line-height: 20px;
+    }
+
+.tp-flight-plan .item.it-3 {
+    flex-grow: 2;
+    text-align: center;
 }
 
-.mint {
+.tp-flight-plan .crop .fly-wrap {
+    border-top: solid 1px #b5b5b5;
+    padding: .75rem 1.5rem;
+    color: #524c61;
+}
+
+    .tp-flight-plan .fly-wrap .fly-det .f-item {
+        font-family: 'Roboto',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+
+.tp-flight-plan .fly-wrap .airway-title {
+    padding-left: 13%;
+    margin-bottom: .75rem;
+    margin-top: 1.75rem;
+}
+
+.tp-flight-plan .fly-wrap .root-de {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.tp-flight-plan .fly-wrap .times {
+    display: inline-block;
+    width: 6rem;
+    font-size: 12px;
+    line-height: 1.125rem;
+    font-weight: 400;
+    letter-spacing: normal;
+    color: #A2A9B3;
+}
+
+.tp-flight-plan .fly-wrap .directs {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    min-height: 3.75rem;
+}
+
+.tp-flight-plan .fly-wrap .itin-time {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding-top: .375rem;
+    padding-bottom: .375rem;
+    padding-right: 1.125rem;
+}
+
+    .tp-flight-plan .fly-wrap .itin-time:after,
+    .tp-flight-plan .fly-wrap .itin-time:before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        display: block;
+        border-radius: 100%;
+        background: #fff;
+        border: 2px solid #b2aebd;
+        z-index: 2;
+    }
+
+.tp-flight-plan .fly-wrap .itin-lines {
+    display: -ms-flexbox;
+    display: flex;
     position: relative;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    left: 4px;
+    min-height: 2rem;
 }
 
-.mint:before {
-    content: '';
+    .tp-flight-plan .fly-wrap .itin-lines:after {
+        content: "";
+        position: relative;
+        width: 2px;
+        background-color: #b2aebd;
+    }
+
+.tp-flight-plan .fly-wrap .hour-sm {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: .75rem;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.tp-flight-plan .fly-wrap .hour-time-sm {
+    position: relative;
+    display: inline-block;
+    padding-right: 1.125rem;
+}
+
+.tp-flight-plan .fly-wrap .itin-target {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-positive: 2;
+    flex-grow: 2;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+    .tp-flight-plan .fly-wrap .itin-target .tar-label {
+        display: inline-block;
+    }
+
+.tp-flight-plan .fly-wrap .welc {
+    min-height: 20px;
+    padding: 8px;
+    margin: 10px 0;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+}
+
+.tp-flight-plan .arrival-info {
+    margin-top: 1.5rem;
+    font-size: 12px;
+    line-height: 1.125rem;
+    font-weight: 400;
+    letter-spacing: normal;
+    border-top: solid 1px #cccccc;
+    padding-top: 10px;
+}
+
+    .tp-flight-plan .fly-wrap .arrival-info .sub-span {
+        margin-top: 1.5rem;
+        font-size: 12px;
+        line-height: 1.125rem;
+        font-weight: 400;
+        letter-spacing: normal;
+        /* border-top: solid 1px #cccccc; */
+        /* padding-top: 10px; */
+    }
+
+    .tp-flight-plan .fly-wrap .arrival-info .duration-info {
+        margin-left: .75rem;
+    }
+
+.tp-flight-plan .anime-airplane {
     position: absolute;
-    bottom: 5px;
-    right: 40px;
-    width: 10px;
-    height: 10px;
-    background: #6DBE47;
-    border-radius: 50%;
+    width: 30px;
+    height: 25px;
+    top: -87%;
+    opacity: 0;
 }
 
-.text-right {
-    width: 33%;
-    float: right;
-    text-align: right;
+.tp-flight-plan .crop.depart .anime-airplane {
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    left: 10%;
+    -webkit-animation: move 3s infinite;
+    animation: move 3s infinite;
 }
 
-.text-hline {
-    color: #6a8597;
-    text-transform: uppercase;
-    display: block;
-    letter-spacing: 2px;
+.tp-flight-plan .crop.return .anime-airplane {
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    right: 10%;
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Safari */
+    transform: rotate(180deg);
+    -webkit-animation: move-right 3s infinite;
+    animation: move-right 3s infinite;
 }
 
-.text-actual {
-    color: #002C5F;
-    padding: 1px 0 0 0;
-    display: block;
+.tp-flight-plan .crop.depart svg {
+    fill: #3e67c0;
 }
 
-.flight-card-details--admin {
-    margin: 10px 0 0 0;
-    color: #bdc3c7;
-    letter-spacing: 1px;
+.tp-flight-plan .crop.return svg {
+    fill: #e91e63;
 }
 
-.admin-left {
-    width: 50%;
-    float: left;
+@-webkit-keyframes move {
+    40% {
+        left: 50%;
+        opacity: 1;
+    }
+
+    100% {
+        left: 90%;
+        opacity: 0;
+    }
 }
 
-.admin-right {
-    width: 50%;
-    float: right;
-    text-align: right;
+@-webkit-keyframes move-right {
+    50% {
+        right: 50%;
+        opacity: 1;
+    }
+
+    100% {
+        right: 90%;
+        opacity: 0;
+    }
 }
+
+@keyframes move {
+    50% {
+        left: 50%;
+        opacity: 1;
+    }
+
+    100% {
+        left: 90%;
+        opacity: 0;
+    }
+}
+
+@keyframes move-right {
+    50% {
+        right: 50%;
+        opacity: 1;
+    }
+
+    100% {
+        right: 90%;
+        opacity: 0;
+    }
+}
+            /* end of new flight plan*/
