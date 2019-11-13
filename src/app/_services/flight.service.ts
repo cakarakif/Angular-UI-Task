@@ -65,7 +65,7 @@ export class FlightService {
         this.slice.operatingAirlineCode,
         this.slice.flightNumber, 
          this.slice.cabinClassInfo[0].class,
-        (this.flag == true) ? 'No Connected Flights' : this.slice.to , 
+        (this.flag == true) ? '' : this.slice.to , 
         (data[i].departure.length-1),
         (Number(data[i].totalDuration.elapsedTimeInMinutes)-Number(data[i].totalDuration.depTotalMinutes)),
         data[i].totalDuration.depTotalMinutes, 

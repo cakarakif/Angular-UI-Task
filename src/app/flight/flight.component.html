@@ -304,7 +304,7 @@
                                 <div class="container-fluid">
                                     <div class="crop depart">
                                         <div class="context collapsed" data-toggle="collapse" data-target="#demo2">
-                                            <a role="button" tabindex="0" class="tog-cal itin-det-btn">
+                                            <a role="button" (click)="setSelectedItem(i)" routerLink="flight-detail" routerLinkActive="active" tabindex="0" class="tog-cal itin-det-btn">
                                                     ✓
                                                 <i class="fa fa-chevron-up"></i>
                                                 <i class="fa fa-chevron-down"></i>
@@ -316,36 +316,36 @@
                                                     <span class="point" style="--data-left:65%"></span>
                                                 </div>
                                                 <div class="airline-image">
-                                                    <div class="df-text">3 Hours</div>
+                                                    <div class="df-text">{{ flights.totalHour }} Hours</div>
                                                     <span class="img-wrapper">
                                                         <svg class="anime-airplane">
                                                             <use xlink:href="#airplane"></use>
                                                         </svg>
-                                                        <span class="top-label has-stops">2 Stops <span
-                                                                class="stops">CDG,SAW</span></span>
+                                                        <span class="top-label has-stops">{{ flights.connectionCount }} Stops <span
+                                                                class="stops">{{ flights.airportNameConnect }}</span></span>
                                                     </span>
                                                 </div>
 
                                                 <div class="port-seg">
                                                     <div class="flight-seg origin">
-                                                        <div class="time">10:30</div>
-                                                        <div class="port">IST</div>
+                                                        <div class="time">{{ flights.departureDate }}</div>
+                                                        <div class="port">{{ flights.departureCity }}</div>
                                                         <div class="name">Istanbul</div>
                                                     </div>
                                                     <div class="flight-seg destination">
-                                                        <div class="time">01:30</div>
-                                                        <div class="port">ESB</div>
-                                                        <div class="name">Ankara</div>
+                                                        <div class="time">{{ flights.arrivalDate }}</div>
+                                                        <div class="port">{{ flights.arrivalCity }}</div>
+                                                        <div class="name">New York</div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="item it-2">
                                                 <div class="dr-row">
-                                                    <span class="al-name">Pegasus</span>
+                                                    <span class="al-name">{{ flights.marketingAirlines }}</span>
                                                     <img class="airline-logo"
                                                         src="https://images.ucuzabilet.com/resources/img/flights-logo/logo25x19/25px-PC.png" />
                                                 </div>
-                                                <div class="take-tim">Wed, Jan 23, 2019</div>
+                                                <div class="take-tim">{{ flights.price }} $</div>
                                             </div>
                                         </div>
                                     </div>
