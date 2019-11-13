@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
     background-color: #fbfbfb
 }
 
@@ -20,7 +21,7 @@ body, html {
 
 .div-reservation-in {
     position: relative;
-    width: 85%;
+    width: 70%;
     margin: auto;
     max-width: 1180px
 }
@@ -280,11 +281,13 @@ body, html {
     text-rendering: optimizeLegibility
 }
 
-.size-for-5 .price-cap, .size-for-5 .t-right {
+.size-for-5 .price-cap,
+.size-for-5 .t-right {
     width: 20%
 }
 
-.size-for-6 .price-cap, .size-for-6 .t-right {
+.size-for-6 .price-cap,
+.size-for-6 .t-right {
     width: 16.66%
 }
 
@@ -365,7 +368,8 @@ body, html {
     background-image: none
 }
 
-.make-reservation, .to-booking {
+.make-reservation,
+.to-booking {
     width: 200px;
     color: #fff;
     outline: 0

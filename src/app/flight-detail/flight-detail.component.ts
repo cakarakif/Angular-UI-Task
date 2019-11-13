@@ -17,7 +17,6 @@ export class FlightDetailComponent implements OnInit {
 
   ngOnInit() {
     this.flightInfo=this.service.getSelectedItem();
-    console.log(this.flightInfo);
   }
 
 }

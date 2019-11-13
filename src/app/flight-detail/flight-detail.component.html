@@ -2,9 +2,7 @@
     <div class="div-reservation-in margin-top-spacing">
         <div class="div-reservation-content flight-details">
             <div class="caption">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Airplane_silhouette_S.png"
-                    alt="" height="25" width="25">
-                Details
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Airplane_silhouette_S.png" alt="" height="25" width="25"> Details
             </div>
             <div class="details">
 
@@ -17,70 +15,66 @@
                     <span class="tag">INFORMATION</span>
                     <span class="fly-duration">
                         <span>Flight Time :</span>
-                        <span class="duration-value">14 Hours</span>
+                    <span class="duration-value">{{flightInfo.hourTotal}} Hours</span>
                     </span>
                 </div>
 
 
 
 
-                <div class="fly-item TR">       
-                    
+                <div class="fly-item TR">
+
                     <div class="fly">
                         <div class="img-wrp">
-                            <img width="35"
-                                src="https://res.cloudinary.com/turna/image/upload/q_auto,f_auto/Images/Flight/Airlines/UA.png"
-                                alt="">
+                            <img width="35" src="https://res.cloudinary.com/turna/image/upload/q_auto,f_auto/Images/Flight/Airlines/UA.png" alt="">
                         </div>
                         <div class="fly-airline wrap-parent">
                             <div class="wrap-parent-child">
-                                <div class="fly-airline-name">United Airlines</div>
+                                <div class="fly-airline-name">{{flightInfo.marketingAirlines}}</div>
                                 <div class="fly-promotion display-none">Promotion</div>
                             </div>
                         </div>
                     </div>
                     <div class="fly-info wrap-parent">
                         <div class="wrap-parent-child">
-                            <div>UA8841</div>
-                            <div>Class: V</div>
+                            <div>UA{{flightInfo.flightNumber}}</div>
+                            <div>Class: {{flightInfo.classM}}</div>
                         </div>
                     </div>
                     <div class="fly-detail wrap-parent">
                         <div class="wrap-parent-child">
                             <div class="time-and-airport first">
-                                <strong>Deprtr: </strong>
-                                9 Kasım 2019 Cumartesi, 10:50 -
+                                <strong>Deprtr: </strong> {{flightInfo.departureDate}}
                                 <span class="no-wrap">
                                     Istanbul (IST)
                                 </span>
                             </div>
                             <div class="time-and-airport">
-                                <strong>Arrival: </strong>
-                                9 Kasım 2019 Cumartesi, 13:40 -
+                                <strong>Arrival: </strong> {{flightInfo.arrivalDate}}
                                 <span class="no-wrap">
                                     New York(JFK)
                                 </span>
                             </div>
                         </div>
                         <div class="segment-duration">
-                            08s 50d
+                            Return {{flightInfo.hourReturn}} Hours
                         </div>
                     </div>
                     <div class="clearfix"></div>
                     <div class="airline-op">
-                        Operating By Lufthansa
+                        Operating By {{flightInfo.operatingAirlines}}
                     </div>
                     <div class="transfer   ">
-                            <div class="transfer-text-wrapper">
-                                <div class="text">
-                                    Layover Time: 2 Hours
-                                </div>
+                        <div class="transfer-text-wrapper">
+                            <div class="text">
+                                Layover Time: {{flightInfo.hourLayover}} Hours
                             </div>
                         </div>
+                    </div>
 
                 </div>
                 <div class="baggage-allowance">
-                        Baggage:&nbsp;&nbsp;23 kg/Per
+                    Baggage:&nbsp;&nbsp;23 kg/Per
                 </div>
                 <div class="clearfix"></div>
                 <input type="hidden" class="is-flight-domestic">
@@ -91,9 +85,7 @@
 
         <div class="div-reservation-content">
             <div class="caption">
-                <img src="https://library.kissclipart.com/20180905/zse/kissclipart-price-icon-clipart-price-tag-computer-icons-dcb2c93467664361.png"
-                    alt="" height="25" width="25">
-                Price
+                <img src="https://library.kissclipart.com/20180905/zse/kissclipart-price-icon-clipart-price-tag-computer-icons-dcb2c93467664361.png" alt="" height="25" width="25"> Price
 
             </div>
             <div class="details">
@@ -105,24 +97,24 @@
                     <div class="t-right price-color-padding">Total</div>
                     <!--=======item=========-->
                     <div class="price-cap">1 Person</div>
-                    <div class="t-right">2.663,39 $</div>
-                    <div class="t-right">40,00 $</div>
-                    <div class="t-right">1.090,30 $</div>
-                    <div class="t-right">1.533,09 $</div>
+                    <div class="t-right">{{flightInfo.price}} $</div>
+                    <div class="t-right">{{flightInfo.service}} $</div>
+                    <div class="t-right">{{flightInfo.tax}} $</div>
+                    <div class="t-right">{{flightInfo.total}} $</div>
                     <div class="clearfix"></div>
                 </div>
                 <div class="clearfix"></div>
             </div>
 
             <div class="item">
-                    <button class="btn-lg btn-default pull-left make-reservation">Reservation</button>
-                    <button class="btn-lg btn-payment pull-right to-booking">Buy</button>
-                    <div class="clearfix"></div>
+                <button class="btn-lg btn-default pull-left make-reservation">Reservation</button>
+                <button class="btn-lg btn-payment pull-right to-booking">Buy</button>
+                <div class="clearfix"></div>
             </div>
         </div>
 
 
-        
+
     </div>
 
 </div>
