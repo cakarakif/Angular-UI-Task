@@ -1,28 +1,377 @@
-html,body {
+body, html {
     background-color: #fbfbfb
+}
+
+.pull-left {
+    float: left
+}
+
+.pull-right {
+    float: right
+}
+
+.padding-t-55 {
+    padding-top: 55px
+}
+
+.margin-top-spacing {
+    margin-top: 70px!important
+}
+
+.div-reservation-in {
+    position: relative;
+    width: 85%;
+    margin: auto;
+    max-width: 1180px
+}
+
+.div-reservation-content .details .fly-item {
+    width: 100%;
+    padding: 7px 0
 }
 
 .div-reservation-content {
     margin-top: 21px;
-    border: 4px solid #d9534f;
+    border: 4px solid #74aefa;
     border-radius: 4px 4px 0 0;
     padding-bottom: 4px;
     background-color: #fff
 }
 
 .div-reservation-content .caption {
-    background-color: #d9534f;
+    background-color: #74aefa;
     font-size: 17px;
     color: #565656;
     padding: 5px 10px 9px
 }
 
+.flight-details .caption {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
 
+.div-reservation-content .caption img {
+    margin-right: 10px
+}
 
+@media (max-width:800px) {
+    .div-reservation-content .details {
+        background-color: #fff;
+        position: relative;
+        color: #777
+    }
+    .div-reservation-content .details .title {
+        position: relative;
+        background-color: #f5f5f5;
+        text-align: center;
+        line-height: 24px;
+        padding: 4px
+    }
+    .div-reservation-content .details .fly {
+        float: left;
+        width: 55%;
+        padding-left: 10px;
+        font-size: 14px;
+        position: relative
+    }
+    .div-reservation-content .details .fly-info {
+        float: left;
+        width: 40%;
+        font-size: 14px
+    }
+    .div-reservation-content .details .fly-detail {
+        float: left;
+        width: 100%;
+        font-size: 14px;
+        padding-bottom: 10px;
+        position: relative;
+        height: 100%
+    }
+    .div-reservation-content .fly-detail .segment-duration {
+        position: absolute;
+        right: 5px;
+        bottom: 28px;
+        color: #002c5f;
+        font-size: 13px
+    }
+}
 
+@media (min-width:801px) {
+    .div-reservation-content .details {
+        background-color: #fff;
+        position: relative;
+        color: #777
+    }
+    .div-reservation-content .details .title {
+        position: relative;
+        width: 100%;
+        background-color: #f5f5f5;
+        display: inline-block;
+        text-align: center;
+        padding: 6px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box
+    }
+    .div-reservation-content .details .fly {
+        float: left;
+        width: 25%;
+        padding-left: 10px;
+        font-size: 14px;
+        position: relative
+    }
+    .div-reservation-content .details .fly-info {
+        float: left;
+        width: 10%;
+        font-size: 14px
+    }
+    .div-reservation-content .details .fly-detail {
+        float: left;
+        width: 63%;
+        font-size: 14px;
+        position: relative
+    }
+    .div-reservation-content .fly-detail .segment-duration {
+        position: absolute;
+        right: 5px;
+        bottom: 28px;
+        color: #002c5f;
+        font-size: 13px
+    }
+}
 
+.div-reservation-content .title .tag {
+    font-size: 15px;
+    font-weight: 500;
+    color: #565656;
+    letter-spacing: .0325em
+}
 
+.fly-promotion {
+    font-size: 14px;
+    padding-left: 1px;
+    color: #fa0303
+}
 
+.fly-item .fly .img-wrp {
+    height: 50px;
+    line-height: 50px;
+    width: 35px;
+    float: left
+}
 
+.fly-item .fly .fly-airline {
+    float: left;
+    width: 80%
+}
 
+.wrap-parent {
+    height: 50px;
+    padding-top: 5px;
+    white-space: nowrap
+}
 
+.wrap-parent::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -.25em
+}
+
+.wrap-parent-child {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 10px;
+    width: 100%;
+    white-space: normal
+}
+
+.fly-item .airline-op {
+    line-height: 22px;
+    font-size: 12px;
+    padding-left: 10px;
+    float: left;
+    max-width: 280px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.title-airline-img {
+    padding-right: 10px
+}
+
+.fly-airline-name {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%
+}
+
+.div-reservation-content .status {
+    font-size: 14px;
+    float: left;
+    padding: 2px 5px 0 5px;
+    position: absolute;
+    left: 5px;
+    text-align: left
+}
+
+.div-reservation-content .status span {
+    color: #002c5f
+}
+
+.time-and-airport {
+    color: #666
+}
+
+.time-and-airport strong {
+    display: inline-block;
+    font-weight: 500
+}
+
+.TR .time-and-airport strong {
+    width: 60px
+}
+
+.time-and-airport .no-wrap {
+    white-space: nowrap
+}
+
+.div-reservation-content .title .fly-duration {
+    float: right;
+    padding: 2px 5px 0 5px;
+    position: absolute;
+    right: 5px;
+    text-align: right
+}
+
+.div-reservation-content .title .fly-duration .duration-value {
+    color: #002c5f
+}
+
+.div-reservation-content .details .div-price {
+    padding: 10px 5%
+}
+
+.div-reservation-content .details .div-price .price-cap {
+    float: left;
+    font-size: 14px
+}
+
+.price-color-padding {
+    color: #002c5f;
+    padding: 5px;
+    text-rendering: optimizeLegibility;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.t-right {
+    text-align: right;
+    font-size: 14px;
+    float: right;
+    text-rendering: optimizeLegibility
+}
+
+.size-for-5 .price-cap, .size-for-5 .t-right {
+    width: 20%
+}
+
+.size-for-6 .price-cap, .size-for-6 .t-right {
+    width: 16.66%
+}
+
+.div-reservation-in .item {
+    margin-top: 10px;
+    border: 1px solid #f1f1f1;
+    font-size: 16px;
+    padding: 25px 25px 25px 25px;
+    margin-bottom: 5px;
+    background-color: #fff
+}
+
+.transfer {
+    clear: both;
+    border-bottom: 2px solid #f5f5f5;
+    z-index: 4;
+    height: 1px;
+    position: relative;
+    margin-bottom: 12px
+}
+
+.margin-top-20 {
+    margin-top: 20px
+}
+
+.margin-top-5 {
+    margin-top: 5px
+}
+
+.transfer .text {
+    width: 270px;
+    position: absolute;
+    left: 50%;
+    margin-left: -130px;
+    z-index: 5;
+    background-color: #f5f5f5;
+    text-align: center;
+    font-size: 13px;
+    height: 26px;
+    line-height: 24px;
+    top: -12px
+}
+
+.make-reservation {
+    background-color: #0e6dc7;
+    border: 1px solid #0e6dc7;
+    border-radius: 2px;
+    padding: 10px
+}
+
+.btn-payment {
+    background-color: #fa0303;
+    border: 1px solid #fa0303;
+    color: #fff;
+    padding: 10px;
+    outline: 0;
+    font-size: 16px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px
+}
+
+.make-reservation:hover {
+    background-color: #31a7a5
+}
+
+.btn-payment:hover {
+    background-color: #fa0303
+}
+
+.btn-payment:active {
+    background-image: none
+}
+
+.make-reservation, .to-booking {
+    width: 200px;
+    color: #fff;
+    outline: 0
+}
+
+.baggage-allowance {
+    line-height: 20px;
+    font-size: 14px;
+    padding: 0 10px 10px;
+    letter-spacing: .0325em;
+    font-weight: 500;
+    color: #fa0303;
+    text-align: right;
+    display: block
+}
