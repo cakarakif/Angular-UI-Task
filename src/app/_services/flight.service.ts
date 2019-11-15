@@ -107,14 +107,25 @@ export class FlightService {
   public filterDepartureArrival(minTime1: Date,maxTime1: Date,minTime2: Date,maxTime2: Date):Array<flight>{ //Filter array by departure time
     //this.temp=JSON.parse(JSON.stringify(this.flightList));
     this.temp = this.flightList.filter((item: any) => {
-      return new Date(item.departureDate).getHours() >= new Date(minTime1).getHours() &&
-             new Date(item.departureDate).getHours() <= new Date(maxTime1).getHours() &&
-             new Date(item.departureDate).getTime() >=  new Date(minTime1).getTime()  &&
-             new Date(item.departureDate).getTime() <=  new Date(maxTime1).getTime()  &&
-             new Date(item.arrivalDate).getHours() >= new Date(minTime2).getHours() &&
-             new Date(item.arrivalDate).getHours() <= new Date(maxTime2).getHours() &&
-             new Date(item.arrivalDate).getTime() >=  new Date(minTime2).getTime()  &&
-             new Date(item.arrivalDate).getTime() <=  new Date(maxTime2).getTime();
+      
+      return (new Date(item.departureDate).getHours() > new Date(minTime1).getHours() ||(
+             new Date(item.departureDate).getHours() === new Date(minTime1).getHours() &&
+             new Date(item.departureDate).getMinutes() >  new Date(minTime1).getMinutes())) &&
+
+             
+             (new Date(item.departureDate).getHours() < new Date(maxTime1).getHours() ||(
+             new Date(item.departureDate).getHours() === new Date(maxTime1).getHours() &&
+             new Date(item.departureDate).getMinutes() <  new Date(maxTime1).getMinutes()) )&&
+
+
+             (new Date(item.arrivalDate).getHours() > new Date(minTime2).getHours() ||(
+              new Date(item.arrivalDate).getHours() === new Date(minTime2).getHours() &&
+              new Date(item.arrivalDate).getMinutes() >  new Date(minTime2).getMinutes())) &&
+ 
+              
+              (new Date(item.arrivalDate).getHours() < new Date(maxTime2).getHours() ||(
+              new Date(item.arrivalDate).getHours() === new Date(maxTime2).getHours() &&
+              new Date(item.arrivalDate).getMinutes() <  new Date(maxTime2).getMinutes()) );
   });
 
     return this.temp;
