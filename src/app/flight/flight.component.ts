@@ -206,7 +206,6 @@ export class FlightComponent implements OnInit {
   }
 
   public setSelectedItem(itemNumber: number) {
-    console.log(itemNumber);
     this.service.setSelectedItem(itemNumber);
   }
 
