@@ -297,15 +297,16 @@
         </div>
         <div class="flights-wrapper">
             <ul *ngFor="let flights of flightList; let i = index" style="list-style-type:none">
-                <li>
+                <li *ngIf="listAdderScroll(i)">
                     <div class="section">
                         <div class="tpd-plan">
                             <div class="tp-flight-plan">
                                 <div class="container-fluid">
                                     <div class="crop depart">
                                         <div class="context collapsed" data-toggle="collapse" data-target="#demo2">
-                                            <a role="button" (click)="setSelectedItem(i)" routerLink="flight-detail" routerLinkActive="active" tabindex="0" class="tog-cal itin-det-btn">
-                                                    ✓
+                                            <a role="button" (click)="setSelectedItem(i)" routerLink="flight-detail"
+                                                routerLinkActive="active" tabindex="0" class="tog-cal itin-det-btn">
+                                                ✓
                                                 <i class="fa fa-chevron-up"></i>
                                                 <i class="fa fa-chevron-down"></i>
                                             </a>
@@ -321,16 +322,18 @@
                                                         <svg class="anime-airplane">
                                                             <use xlink:href="#airplane"></use>
                                                         </svg>
-                                                        <span class="top-label has-stops">{{ flights.connectionCount }} Stops <span
-                                                                class="stops">{{ flights.airportNameConnect }} |</span> Flight <span
-                                                                class="stops">{{ flights.flightNumber }} |</span> Return <span
-                                                                class="stops">{{ flights.hourReturn }} hours</span></span>
+                                                        <span class="top-label has-stops">{{ flights.connectionCount }}
+                                                            Stops <span class="stops">{{ flights.airportNameConnect }}
+                                                                |</span> Flight <span
+                                                                class="stops">{{ flights.flightNumber }} |</span> Return
+                                                            <span class="stops">{{ flights.hourReturn }}
+                                                                hours</span></span>
                                                     </span>
                                                 </div>
 
                                                 <div class="port-seg">
                                                     <div class="flight-seg origin">
-                                                        <div class="time" >{{ flights.hourDep }}</div>
+                                                        <div class="time">{{ flights.hourDep }}</div>
                                                         <div class="port">{{ flights.departureCity }}</div>
                                                         <div class="name">Istanbul</div>
                                                     </div>
