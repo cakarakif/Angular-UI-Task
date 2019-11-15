@@ -185,7 +185,7 @@ export class FlightComponent implements OnInit {
     this.filterDepartureArrival();
   }
 
-  public controlCheckBoxAirways(itemNumber: number) {//number used for 'only' operation
+  public controlCheckBoxAirways(itemNumber: number) {//number used for 'only' operation if it's not -1
     //control checkbox for set list
     var checkedItems: HTMLInputElement;
 
