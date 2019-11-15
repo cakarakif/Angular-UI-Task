@@ -22,7 +22,7 @@ export class FlightComponent implements OnInit {
   private scrollItem: number=10;
 
   check_box_type = CheckBoxType;
-  currentlyChecked: CheckBoxType;
+  currentlyChecked: CheckBoxType=0;
 
   //time slider part for Departure
   minSliderDep: number = 0;
@@ -83,7 +83,7 @@ export class FlightComponent implements OnInit {
     }
 
     if (targetType === 0) {//reset all data list
-      this.getData();
+      this.getData();this.getData();
       this.setCheckboxChecked();
       this.minSliderDep = 0;
       this.maxSliderDep = 1439;
@@ -111,7 +111,7 @@ export class FlightComponent implements OnInit {
   }
 
   public getData() {
-    this.flightList = this.service.getFlightList();
+    this.flightList =JSON.parse(JSON.stringify(this.service.getFlightList())) ;
     this.getAirlines();
   }
 
@@ -127,11 +127,11 @@ export class FlightComponent implements OnInit {
 
 
   public sortPrice() {
-    this.flightList = this.service.sortPrice();
+    this.flightList = JSON.parse(JSON.stringify(this.service.sortPrice()));
   }
 
   public sortDuration() {
-    this.flightList = this.service.sortDuration();
+    this.flightList = JSON.parse(JSON.stringify(this.service.sortDuration()));
   }
 
   public filterDepartureArrival() {
@@ -163,7 +163,7 @@ export class FlightComponent implements OnInit {
       maxDate2.setMinutes(maxMin2);
 
 
-      this.flightList = this.service.filterDepartureArrival(minDate1, maxDate1, minDate2, maxDate2);
+      this.flightList = JSON.parse(JSON.stringify(this.service.filterDepartureArrival(minDate1, maxDate1, minDate2, maxDate2)));
 
       this.controlCheckBoxAirways(-1);
       this.selectCheckBoxSort(this.currentlyChecked);
@@ -172,10 +172,10 @@ export class FlightComponent implements OnInit {
 
   public filterAirlines(airlinesName: string, IsChecked: boolean) {
     if (IsChecked === false) {
-      this.flightList = this.service.filterAirlinesRemove(airlinesName);
+      this.flightList = JSON.parse(JSON.stringify(this.service.filterAirlinesRemove(airlinesName)));
     } else {
       this.controlCheckBoxAirways(-1);
-      this.flightList = this.service.filterAirlinesAdd(airlinesName);
+      this.flightList = JSON.parse(JSON.stringify(this.service.filterAirlinesAdd(airlinesName)));
       this.filterDepartureArrival();
     }
   }
@@ -193,10 +193,10 @@ export class FlightComponent implements OnInit {
       checkedItems = (<HTMLInputElement>document.getElementById("" + item)) as HTMLInputElement;
 
       if (itemNumber === -1 && checkedItems.checked === false) {
-        this.flightList = this.service.filterAirlinesRemove(this.Airlines[item - 1]);
+        this.flightList = JSON.parse(JSON.stringify(this.service.filterAirlinesRemove(this.Airlines[item - 1])));
       }
       else if (itemNumber !== -1 && item !== itemNumber) {
-        this.flightList = this.service.filterAirlinesRemove(this.Airlines[item - 1]);
+        this.flightList = JSON.parse(JSON.stringify(this.service.filterAirlinesRemove(this.Airlines[item - 1])));
         checkedItems.checked = false;
       }
       else if (itemNumber !== -1 && item === itemNumber) {
