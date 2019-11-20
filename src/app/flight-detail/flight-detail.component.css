@@ -1,5 +1,4 @@
-body,
-html {
+body, html {
     background-color: #fbfbfb
 }
 
@@ -281,13 +280,11 @@ html {
     text-rendering: optimizeLegibility
 }
 
-.size-for-5 .price-cap,
-.size-for-5 .t-right {
+.size-for-5 .price-cap, .size-for-5 .t-right {
     width: 20%
 }
 
-.size-for-6 .price-cap,
-.size-for-6 .t-right {
+.size-for-6 .price-cap, .size-for-6 .t-right {
     width: 16.66%
 }
 
@@ -368,8 +365,7 @@ html {
     background-image: none
 }
 
-.make-reservation,
-.to-booking {
+.make-reservation, .to-booking {
     width: 200px;
     color: #fff;
     outline: 0
@@ -384,4 +380,106 @@ html {
     color: #fa0303;
     text-align: right;
     display: block
+}
+
+
+
+
+
+
+/*flight animation part */
+
+.section {
+    max-width: 800px;
+}
+
+.tp-flight-plan .item.it-1 {
+    position: relative;
+}
+
+.tp-flight-plan .it-1 .airline-image {
+    position: center;
+    width: 100%;
+}
+
+.tp-flight-plan .anime-airplane {
+    
+    position: absolute;
+    width: 40px;
+    height: 35px;
+    top: -87%;
+    opacity: 0
+}
+
+.tp-flight-plan .crop.depart .anime-airplane {
+    margin-top: 9.2%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    left: 10%;
+    -webkit-animation: move 3s infinite;
+    animation: move 3s infinite
+}
+
+.tp-flight-plan .crop.return .anime-airplane {
+    margin-top: 7%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    right: 10%;
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -webkit-animation: move-right 3s infinite;
+    animation: move-right 3s infinite
+}
+
+.tp-flight-plan .crop.depart svg {
+    fill: #3e67c0
+}
+
+.tp-flight-plan .crop.return svg {
+    fill: #e91e63
+}
+
+@-webkit-keyframes move {
+    40% {
+        left: 50%;
+        opacity: 1
+    }
+    100% {
+        left: 90%;
+        opacity: 0
+    }
+}
+
+@-webkit-keyframes move-right {
+    50% {
+        right: 50%;
+        opacity: 1
+    }
+    100% {
+        right: 90%;
+        opacity: 0
+    }
+}
+
+@keyframes move {
+    50% {
+        left: 50%;
+        opacity: 1
+    }
+    100% {
+        left: 90%;
+        opacity: 0
+    }
+}
+
+@keyframes move-right {
+    50% {
+        right: 50%;
+        opacity: 1
+    }
+    100% {
+        right: 90%;
+        opacity: 0
+    }
 }

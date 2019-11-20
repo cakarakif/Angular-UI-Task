@@ -53,6 +53,11 @@ export class flight {
     rtLayoverTime: number;
     returnHour: number;
 
+    //for price parts
+    total:number;
+    tax:number;
+
+
 
 
     //generated to show hours
@@ -61,10 +66,6 @@ export class flight {
     hourTotal: string;
     hourReturn: string;
     hourLayover: string;
-    //for price calculation
-    total: number;
-    tax: number;
-    service: number;
 
 
 
@@ -106,7 +107,10 @@ export class flight {
         rt2marketing: string,
 
         rtclassM: string,
-        rtLayoverTime: number) {
+        rtLayoverTime: number,
+        
+        total:number,
+        tax:number) {
 
         this.departureCity = departureCity,
             this.arrivalCity = arrivalCity,
@@ -152,16 +156,15 @@ export class flight {
         this.rtclassM=rtclassM;
         this.rtLayoverTime=rtLayoverTime;
 
+        this.total=total-2;
+        this.tax=tax;
+
 
         this.hourDep = "" + (this.departureDate).toLocaleString().substr(11, 5);
         this.hourArr = "" + (this.arrivalDate).toLocaleString().substr(11, 5);
         this.hourTotal = "" + Math.floor(this.totalHour / 60);// u can use these as a number.
         this.hourReturn = "" + Math.floor(this.returnHour / 60);
         this.hourLayover = "" + Math.floor(this.layoverTime / 60);
-
-        this.tax = this.price / 10;
-        this.service = this.price / 20;
-        this.total = this.price - this.tax - this.service;
     }
 
 }

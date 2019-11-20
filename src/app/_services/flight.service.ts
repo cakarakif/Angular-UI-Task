@@ -100,7 +100,9 @@ export class FlightService {
         (this.flagRtrn === true) ? '' : data[i].return[1].operatingAirlineCode,
         (this.flagRtrn === true) ? '' : data[i].return[1].marketingAirlineCode,
         data[i].return[0].cabinClassInfo[0].class,
-        (Number(data[i].totalDuration.elapsedTimeInMinutes)-Number(data[i].totalDuration.depTotalMinutes))
+        (Number(data[i].totalDuration.elapsedTimeInMinutes)-Number(data[i].totalDuration.depTotalMinutes)),
+        data[i].price.itinerary.item.baseFare,
+        data[i].price.itinerary.item.taxFare
         )); 
     }
     console.log(this.flightList);
@@ -183,7 +185,7 @@ export class FlightService {
   }
 
   public getSelectedItem(){
-    return this.flightList[this.selectedItem];
+    return this.temp[this.selectedItem];
   }
 
 
