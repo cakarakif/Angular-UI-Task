@@ -2,7 +2,8 @@
     <div class="div-reservation-in margin-top-spacing">
         <div class="div-reservation-content flight-details">
             <div class="caption">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Airplane_silhouette_S.png" alt="" height="25" width="25"> Details
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Airplane_silhouette_S.png" alt=""
+                    height="25" width="25"> Departure Details
             </div>
             <div class="details">
 
@@ -15,7 +16,7 @@
                     <span class="tag">INFORMATION</span>
                     <span class="fly-duration">
                         <span>Flight Time :</span>
-                    <span class="duration-value">{{flightInfo.hourTotal}} Hours</span>
+                        <span class="duration-value">{{flightInfo.hourTotal}} Hours</span>
                     </span>
                 </div>
 
@@ -26,7 +27,9 @@
 
                     <div class="fly">
                         <div class="img-wrp">
-                            <img width="35" src="https://res.cloudinary.com/turna/image/upload/q_auto,f_auto/Images/Flight/Airlines/UA.png" alt="">
+                            <img width="35"
+                                src="https://res.cloudinary.com/turna/image/upload/q_auto,f_auto/Images/Flight/Airlines/UA.png"
+                                alt="">
                         </div>
                         <div class="fly-airline wrap-parent">
                             <div class="wrap-parent-child">
@@ -37,7 +40,7 @@
                     </div>
                     <div class="fly-info wrap-parent">
                         <div class="wrap-parent-child">
-                            <div>UA{{flightInfo.flightNumber}}</div>
+                            <div>Flight:{{flightInfo.flightNumber}}</div>
                             <div>Class: {{flightInfo.classM}}</div>
                         </div>
                     </div>
@@ -46,13 +49,13 @@
                             <div class="time-and-airport first">
                                 <strong>Deprtr: </strong> {{flightInfo.departureDate}}
                                 <span class="no-wrap">
-                                    Istanbul (IST)
+                                    {{flightInfo.departureCity}}
                                 </span>
                             </div>
                             <div class="time-and-airport">
-                                <strong>Arrival: </strong> {{flightInfo.arrivalDate}}
+                                <strong>Arrival: </strong> {{flightInfo.tfarrivalDate}}
                                 <span class="no-wrap">
-                                    New York(JFK)
+                                    {{flightInfo.tfarrivalCity}}
                                 </span>
                             </div>
                         </div>
@@ -64,20 +67,70 @@
                     <div class="airline-op">
                         Operating By {{flightInfo.operatingAirlines}}
                     </div>
-                    <div class="transfer   ">
-                        <div class="transfer-text-wrapper">
-                            <div class="text">
-                                Layover Time: {{flightInfo.hourLayover}} Hours
+                    <div class="baggage-allowance">
+                        Baggage:&nbsp;&nbsp;{{flightInfo.tfarrivalBaggage}}
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="transfer   ">
+                    <div class="transfer-text-wrapper">
+                        <div class="text">
+                            Layover Time: {{flightInfo.hourLayover}} Hours
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+
+                <div class="fly-item TR">
+
+                    <div class="fly">
+                        <div class="img-wrp">
+                            <img width="35"
+                                src="https://res.cloudinary.com/turna/image/upload/q_auto,f_auto/Images/Flight/Airlines/UA.png"
+                                alt="">
+                        </div>
+                        <div class="fly-airline wrap-parent">
+                            <div class="wrap-parent-child">
+                                <div class="fly-airline-name">{{flightInfo.tfdepartureMarketing}}</div>
+                                <div class="fly-promotion display-none">Promotion</div>
                             </div>
                         </div>
                     </div>
-
+                    <div class="fly-info wrap-parent">
+                        <div class="wrap-parent-child">
+                            <div>Flight:{{flightInfo.tfdepartureFlightNum}}</div>
+                            <div>Class: {{flightInfo.classM}}</div>
+                        </div>
+                    </div>
+                    <div class="fly-detail wrap-parent">
+                        <div class="wrap-parent-child">
+                            <div class="time-and-airport first">
+                                <strong>Deprtr: </strong> {{flightInfo.tfdepartureDate}}
+                                <span class="no-wrap">
+                                    {{flightInfo.tfdepartureCity}}
+                                </span>
+                            </div>
+                            <div class="time-and-airport">
+                                <strong>Arrival: </strong> {{flightInfo.arrivalDate}}
+                                <span class="no-wrap">
+                                {{flightInfo.arrivalCity}}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="segment-duration">
+                            Return {{flightInfo.hourReturn}} Hours
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="airline-op">
+                        Operating By {{flightInfo.tfdepartureOperating}}
+                    </div>
+                    <div class="baggage-allowance">
+                        Baggage:&nbsp;&nbsp;{{flightInfo.tfdepartureBagage}}
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
-                <div class="baggage-allowance">
-                    Baggage:&nbsp;&nbsp;23 kg/Per
-                </div>
-                <div class="clearfix"></div>
-                <input type="hidden" class="is-flight-domestic">
             </div>
         </div>
 
@@ -85,7 +138,8 @@
 
         <div class="div-reservation-content">
             <div class="caption">
-                <img src="https://library.kissclipart.com/20180905/zse/kissclipart-price-icon-clipart-price-tag-computer-icons-dcb2c93467664361.png" alt="" height="25" width="25"> Price
+                <img src="https://library.kissclipart.com/20180905/zse/kissclipart-price-icon-clipart-price-tag-computer-icons-dcb2c93467664361.png"
+                    alt="" height="25" width="25"> Price
 
             </div>
             <div class="details">

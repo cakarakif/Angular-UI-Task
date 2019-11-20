@@ -13,7 +13,8 @@ export class FlightService {
   private temp: Array<flight> ;
   private Airlines: Array<string>;
   private slice:any;
-  private flag: boolean;
+  private flagDptr: boolean;
+  private flagRtrn: boolean;
   private selectedItem:number;
   
   constructor(private http: HttpClient) {
@@ -51,28 +52,58 @@ export class FlightService {
     for(var i:number = 0; i<data.length; i++){  //Json To ArrayList
       this.slice=data[i].departure[0];
 
-      if(data[i].departure.length === 1){//detected connection number.
-        this.flag=true;
-      }else{
-        this.flag=false;
-      }
+      //detected connection number.
+      if(data[i].departure.length === 1){this.flagDptr=true;}else{this.flagDptr=false;}
+      if(data[i].return.length === 1){this.flagRtrn=true;}else{this.flagRtrn=false;}
 
       this.flightList.push(new flight(//Json To FlightModel
-        this.slice.from, (this.flag == true) ? this.slice.to : data[i].departure[1].to ,
+        this.slice.from, 
+        (this.flagDptr == true) ? this.slice.to : data[i].departure[1].to ,
         this.slice.departureDateTime,
-        (this.flag == true) ? this.slice.arrivalDateTime : data[i].departure[1].arrivalDateTime,
+        (this.flagDptr === true) ? this.slice.arrivalDateTime : data[i].departure[1].arrivalDateTime,
         this.slice.marketingAirlineCode,  
         this.slice.operatingAirlineCode,
         this.slice.flightNumber, 
          this.slice.cabinClassInfo[0].class,
-        (this.flag == true) ? '' : this.slice.to , 
+        (this.flagDptr === true) ? '' : this.slice.to , 
         (data[i].departure.length-1),
         (Number(data[i].totalDuration.elapsedTimeInMinutes)-Number(data[i].totalDuration.depTotalMinutes)),
         data[i].totalDuration.depTotalMinutes, 
         data[i].totalDuration.returnTotalMinutes, 
-        data[i].price.itinerary.totalFare
-      )); 
+        data[i].price.itinerary.totalFare,
+
+        (this.flagDptr === true) ? '' : this.slice.to,
+        (this.flagDptr === true) ? '' : this.slice.arrivalDateTime,
+        (this.slice.baggages.quantity +' ' +this.slice.baggages.unit+'/'+this.slice.baggages.type),
+        
+        (this.flagDptr === true) ? '' : data[i].departure[1].flightNumber,
+        (this.flagDptr === true) ? '' : data[i].departure[1].from,
+        (this.flagDptr === true) ? '' : data[i].departure[1].departureDateTime,
+        (this.flagDptr === true) ? '' : (data[i].departure[1].baggages.quantity +' ' +data[i].departure[1].baggages.unit+'/'+data[i].departure[1].baggages.type),
+        (this.flagDptr === true) ? '' : data[i].departure[1].marketingAirlineCode,
+        (this.flagDptr === true) ? '' : data[i].departure[1].operatingAirlineCode,
+
+        data[i].return[0].from,
+        data[i].return[0].departureDateTime,
+        (this.flagRtrn === true) ? '' : data[i].return[0].to,
+        (this.flagRtrn === true) ? '' : data[i].return[0].arrivalDateTime,
+        data[i].return[0].flightNumber,
+        (data[i].return[0].baggages.quantity +' ' +data[i].return[0].baggages.unit+'/'+data[i].return[0].baggages.type),
+        data[i].return[0].operatingAirlineCode,
+        data[i].return[0].marketingAirlineCode,
+        (this.flagRtrn === true) ? '' : data[i].return[1].from,
+        (this.flagRtrn === true) ? '' : data[i].return[1].departureDateTime,
+        (this.flagRtrn === true) ? data[i].return[0].to : data[i].return[1].to,
+        (this.flagRtrn === true) ? data[i].return[0].arrivalDateTime : data[i].return[1].arrivalDateTime,
+        (this.flagRtrn === true) ? '' : data[i].return[1].flightNumber,
+        (this.flagRtrn === true) ? '' : (data[i].return[1].baggages.quantity +' ' +data[i].return[1].baggages.unit+'/'+data[i].return[1].baggages.type),
+        (this.flagRtrn === true) ? '' : data[i].return[1].operatingAirlineCode,
+        (this.flagRtrn === true) ? '' : data[i].return[1].marketingAirlineCode,
+        data[i].return[0].cabinClassInfo[0].class,
+        (Number(data[i].totalDuration.elapsedTimeInMinutes)-Number(data[i].totalDuration.depTotalMinutes))
+        )); 
     }
+    console.log(this.flightList);
     this.fillTemplateList(); // fill  template list for sort and filter
     return this.flightList;
   }
