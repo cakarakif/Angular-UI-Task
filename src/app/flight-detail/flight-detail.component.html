@@ -14,7 +14,7 @@
                         Status: <span>Pre-Reservation</span>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span (click)="showflightRulesFirst()">Flight Rules</span>
+                        <a class="rules" (click)="showflightRulesFirst()" style="text-decoration: underline;">Flight Rules</a>
                     </span>
                     <span class="tag">INFORMATION</span>
                     <span class="fly-duration">
@@ -166,7 +166,7 @@
         <div *ngIf='flightRulesFirst' class="div-reservation-content flight-details">
                 <div class="caption">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Airplane_silhouette_S.png" alt=""
-                        height="25" width="25"> Flight Rules
+                        height="25" width="25" > Flight Rules
                 </div>
         </div>
 
@@ -186,7 +186,7 @@
                         Status: <span>Pre-Reservation</span>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span (click)="showflightRulesSecond()">Flight Rules</span>
+                        <a class="rules" (click)="showflightRulesSecond()" style="text-decoration: underline;">Flight Rules</a>
                     </span>
                     <span class="tag">INFORMATION</span>
                     <span class="fly-duration">
