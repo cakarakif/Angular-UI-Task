@@ -105,7 +105,6 @@ export class FlightService {
         data[i].price.itinerary.item.taxFare
         )); 
     }
-    console.log(this.flightList);
     this.fillTemplateList(); // fill  template list for sort and filter
     return this.flightList;
   }
