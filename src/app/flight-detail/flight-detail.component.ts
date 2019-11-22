@@ -10,6 +10,7 @@ import { flight } from '../_models/flight.model';
 export class FlightDetailComponent implements OnInit {
 
   private flightInfo: flight ;
+  private flagStops: Boolean;
   
   constructor(private service:FlightService) {
     
@@ -17,6 +18,7 @@ export class FlightDetailComponent implements OnInit {
 
   ngOnInit() {
     this.flightInfo=this.service.getSelectedItem();
+    this.flagStops=this.service.flagDptr;
   }
 
 }

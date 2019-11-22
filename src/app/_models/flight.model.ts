@@ -78,6 +78,7 @@ export class flight {
         connectionCount: number, 
         layoverTime:number, totalHour: number,
         returnHour: number, price: number,
+        
         tfarrivalCity: string,
         tfarrivalDate: Date,
         tfarrivalBaggage: string,

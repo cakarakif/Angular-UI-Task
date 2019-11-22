@@ -13,9 +13,9 @@ export class FlightService {
   private temp: Array<flight> ;
   private Airlines: Array<string>;
   private slice:any;
-  private flagDptr: boolean;
   private flagRtrn: boolean;
   private selectedItem:number;
+  flagDptr: boolean;
   
   constructor(private http: HttpClient) {
       this.flightList=new Array<flight>();
@@ -72,8 +72,8 @@ export class FlightService {
         data[i].totalDuration.returnTotalMinutes, 
         data[i].price.itinerary.totalFare,
 
-        (this.flagDptr === true) ? '' : this.slice.to,
-        (this.flagDptr === true) ? '' : this.slice.arrivalDateTime,
+        this.slice.to,
+        this.slice.arrivalDateTime,
         (this.slice.baggages.quantity +' ' +this.slice.baggages.unit+'/'+this.slice.baggages.type),
         
         (this.flagDptr === true) ? '' : data[i].departure[1].flightNumber,
@@ -85,8 +85,8 @@ export class FlightService {
 
         data[i].return[0].from,
         data[i].return[0].departureDateTime,
-        (this.flagRtrn === true) ? '' : data[i].return[0].to,
-        (this.flagRtrn === true) ? '' : data[i].return[0].arrivalDateTime,
+        data[i].return[0].to,
+        data[i].return[0].arrivalDateTime,
         data[i].return[0].flightNumber,
         (data[i].return[0].baggages.quantity +' ' +data[i].return[0].baggages.unit+'/'+data[i].return[0].baggages.type),
         data[i].return[0].operatingAirlineCode,
@@ -185,6 +185,11 @@ export class FlightService {
   }
 
   public getSelectedItem(){
+    if(this.temp[this.selectedItem].connectionCount===0)
+      this.flagDptr=false;
+    else
+      this.flagDptr=true;
+
     return this.temp[this.selectedItem];
   }
 

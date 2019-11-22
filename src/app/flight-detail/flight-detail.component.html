@@ -47,13 +47,13 @@
                     <div class="fly-detail wrap-parent">
                         <div class="wrap-parent-child">
                             <div class="time-and-airport first">
-                                <strong>Deprtr: </strong> {{flightInfo.departureDate}}
+                                <strong>Takeoff: </strong> {{flightInfo.departureDate}}
                                 <span class="no-wrap">
                                     {{flightInfo.departureCity}}
                                 </span>
                             </div>
                             <div class="time-and-airport">
-                                <strong>Arrival: </strong> {{flightInfo.tfarrivalDate}}
+                                <strong>Landing: </strong> {{flightInfo.tfarrivalDate}}
                                 <span class="no-wrap">
                                     {{flightInfo.tfarrivalCity}}
                                 </span>
@@ -109,7 +109,7 @@
                     <div class="clearfix"></div>
                 </div>
 
-                    <div class="fly-item TR">
+                    <div  *ngIf="flagStops"  class="fly-item TR">
 
                         <div class="fly">
                             <div class="img-wrp">
@@ -133,13 +133,13 @@
                         <div class="fly-detail wrap-parent">
                             <div class="wrap-parent-child">
                                 <div class="time-and-airport first">
-                                    <strong>Deprtr: </strong> {{flightInfo.tfdepartureDate}}
+                                    <strong>Takeoff: </strong> {{flightInfo.tfdepartureDate}}
                                     <span class="no-wrap">
                                         {{flightInfo.tfdepartureCity}}
                                     </span>
                                 </div>
                                 <div class="time-and-airport">
-                                    <strong>Arrival: </strong> {{flightInfo.arrivalDate}}
+                                    <strong>Landing: </strong> {{flightInfo.arrivalDate}}
                                     <span class="no-wrap">
                                         {{flightInfo.arrivalCity}}
                                     </span>
@@ -205,13 +205,13 @@
                         <div class="fly-detail wrap-parent">
                             <div class="wrap-parent-child">
                                 <div class="time-and-airport first">
-                                    <strong>Deprtr: </strong> {{flightInfo.rtdepartureDate}}
+                                    <strong>Takeoff: </strong> {{flightInfo.rtdepartureDate}}
                                     <span class="no-wrap">
                                         {{flightInfo.rtdepartureCity}}
                                     </span>
                                 </div>
                                 <div class="time-and-airport">
-                                    <strong>Arrival: </strong> {{flightInfo.rt_tf_arrivalDate}}
+                                    <strong>Landing: </strong> {{flightInfo.rt_tf_arrivalDate}}
                                     <span class="no-wrap">
                                         {{flightInfo.rt_tf_arrivalCity}}
                                     </span>
@@ -269,7 +269,7 @@
                     </svg>
                     <div class="clearfix"></div>
 
-                    <div class="fly-item TR">
+                    <div *ngIf="flagStops" class="fly-item TR">
 
                         <div class="fly">
                             <div class="img-wrp">
@@ -293,13 +293,13 @@
                         <div class="fly-detail wrap-parent">
                             <div class="wrap-parent-child">
                                 <div class="time-and-airport first">
-                                    <strong>Deprtr: </strong> {{flightInfo.rt_tf_departureDate}}
+                                    <strong>Takeoff: </strong> {{flightInfo.rt_tf_departureDate}}
                                     <span class="no-wrap">
                                         {{flightInfo.rt_tf_departureCity}}
                                     </span>
                                 </div>
                                 <div class="time-and-airport">
-                                    <strong>Arrival: </strong> {{flightInfo.rtarrivalDate}}
+                                    <strong>Landing: </strong> {{flightInfo.rtarrivalDate}}
                                     <span class="no-wrap">
                                         {{flightInfo.rtarrivalCity}}
                                     </span>
