@@ -553,7 +553,7 @@ body {
 .tp-flight-plan .item.it-1 {
     flex-grow: 5;
     display: flex;
-    position: relative
+    position: relative;
 }
 
 .tp-flight-plan .item.it-1:before {
@@ -617,13 +617,18 @@ body {
     width: 100%;
     display: flex;
     padding: 0 20px;
-    height: 21px
+    height: 21px;
+    margin-bottom: 5%;
+}
+
+.tp-flight-plan .it-1 .df-text {
+    margin-top: 5%;
 }
 
 .tp-flight-plan .it-1 .img-wrapper {
     flex: 1;
     text-align: center;
-    position: relative
+    position: relative;
 }
 
 .tp-flight-plan .it-1 .top-label {
@@ -705,83 +710,4 @@ body {
     letter-spacing: normal;
     border-top: solid 1px #ccc;
     padding-top: 10px
-}
-
-.tp-flight-plan .anime-airplane {
-    position: absolute;
-    width: 30px;
-    height: 25px;
-    top: -87%;
-    opacity: 0
-}
-
-.tp-flight-plan .crop.depart .anime-airplane {
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    left: 10%;
-    -webkit-animation: move 3s infinite;
-    animation: move 3s infinite
-}
-
-.tp-flight-plan .crop.return .anime-airplane {
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    right: 10%;
-    -ms-transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-    -webkit-animation: move-right 3s infinite;
-    animation: move-right 3s infinite
-}
-
-.tp-flight-plan .crop.depart svg {
-    fill: #3e67c0
-}
-
-.tp-flight-plan .crop.return svg {
-    fill: #e91e63
-}
-
-@-webkit-keyframes move {
-    40% {
-        left: 50%;
-        opacity: 1
-    }
-    100% {
-        left: 90%;
-        opacity: 0
-    }
-}
-
-@-webkit-keyframes move-right {
-    50% {
-        right: 50%;
-        opacity: 1
-    }
-    100% {
-        right: 90%;
-        opacity: 0
-    }
-}
-
-@keyframes move {
-    50% {
-        left: 50%;
-        opacity: 1
-    }
-    100% {
-        left: 90%;
-        opacity: 0
-    }
-}
-
-@keyframes move-right {
-    50% {
-        right: 50%;
-        opacity: 1
-    }
-    100% {
-        right: 90%;
-        opacity: 0
-    }
 }
